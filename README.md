@@ -206,21 +206,31 @@ class Lotto(private val numbers: List<Int>) {
 - [ ]  inputWinningNumber.kt
     - 로또 당첨 번호 6개를 입력 받아 Lotto 클래스에 저장하는 함수
     - 입력된 문자열을 쉼표(,)를 기준으로 분할
-- [ ]  winningNumbersValidation.kt
+- [ ]  winningNumbersRangeValidation.kt
     - 입력된 당첨 번호를 검증하는 함수
-    - 1~45 범위 외의 숫자 입력 시 OutOfRangeArgumentException발생
-    - 중복된 값 입력 시 IllegalArgumentException 발생
+    - 1~45 범위 외의 숫자 입력 시 OutOfRangeArgumentException 발생
+    - OutOfRangeArgumentException Custom Exception 추가
+- [ ]  winningNumbersIntegerValidation.kt
+    - 숫자가 아닌 값이 있는지 검사하는 함수
     - 숫자가 아닌 값 입력 시 IllegalArgumentException 발생
+- [ ]  winningNumbersDuplicateValidation.kt
+    - 중복된 값이 있는지 검증하는 함수
+    - 중복된 값이 있다면 IllegalArgumentException 발생
 - [ ]  Lotto.kt
     - 로또 당첨 번호를 저장하는 클래스
     - 저장된 당첨 번호 필드 접근을 위한 Getter 메소드 제작
 - [ ]  inputBonusNumber.kt
     - 보너스 번호를 입력받아 저장하는 함수
-- [ ]  bonusNumberValidation.kt
+- [ ]  bonusNumbersRangeValidation.kt
     - 입력된 보너스 번호를 검증하는 함수
-    - 1~45 범위 외의 숫자 입력 시 OutOfRangeArgumentException발생
-    - 중복된 값 입력 시 IllegalArgumentException 발생
+    - 1~45 범위 외의 숫자 입력 시 OutOfRangeArgumentException 발생
+    - OutOfRangeArgumentException Custom Exception 추가
+- [ ]  bonusNumbersIntegerValidation.kt
+    - 숫자가 아닌 값이 있는지 검사하는 함수
     - 숫자가 아닌 값 입력 시 IllegalArgumentException 발생
+- [ ]  bonusNumbersDuplicateValidation.kt
+    - 중복된 값이 있는지 검증하는 함수
+    - 중복된 값이 있다면 IllegalArgumentException 발생
 - [ ]  compareNumbers.kt
     - 당첨 번호와 로또 번호를 비교하는 함수
     - 당첨된 번호의 개수에 따라 전역 변수 업데이트
