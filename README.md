@@ -223,3 +223,5 @@ class Lotto(private val numbers: List<Int>) {
 - [ ]  compareNumbers.kt
     - 당첨 번호와 로또 번호를 비교하는 함수
     - 당첨된 번호의 개수에 따라 전역 변수 업데이트
+- [ ]  getRateOfReturn.kt
+    - 최종 수익률을 반환하는 함수 
