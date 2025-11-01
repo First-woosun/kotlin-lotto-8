@@ -183,14 +183,15 @@ class Lotto(private val numbers: List<Int>) {
 
 ## 🚀기능 구현 목록🚀
 
-- [ ]  전역 변수 목록
+- [ ]  enum class
 
-    | 이름 | 용도 |
-    | --- | --- |
-    | winningThree | 당첨 숫자가 3개인 경우 +1 |
-    | winningFour | 당첨 숫자가 4개인 경우 +1 |
-    | winningFive | 당첨 숫자가 5개인 경우 +1 |
-    | winningSix | 당첨 숫자가 6개인 경우 +1 |
+    | 이름 | 용도                  |
+    | --- |---------------------|
+    | WINNING_THREE | 당첨 숫자가 3개인 경우       |
+    | WINNING_FOUR | 당첨 숫자가 4개인 경우       |
+    | WINNING_FIVE | 당첨 숫자가 5개인 경우       |
+     | WINNING_FIVE_WITH_BONUS| 당첨 숫자가 5개이며 보너스 숫자도 맞은 경우 |
+      | WINNING_SIX | 당첨 숫자가 6개인 경우       |
 - [ ]  costInputAndSave.kt
     - 로또 구입 비용을 입력받고 저장하는 함수
 - [ ]  costInputValidation.kt
