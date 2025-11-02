@@ -6,4 +6,11 @@ class Lotto(private val numbers: List<Int>) {
     }
 
     // TODO: 추가 기능 구현
+    fun compare(inputNumbers : MutableList<Int>) : Int {
+        return numbers.count {it in inputNumbers.toSet()}
+    }
+
+    fun getNumbers() : List<Int> {
+        return numbers
+    }
 }
