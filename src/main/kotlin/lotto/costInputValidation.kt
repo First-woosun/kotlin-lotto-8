@@ -10,6 +10,6 @@ fun costInputValidation(inputString: String): Int {
 
         return returnValue
     } catch (e: NumberFormatException) {
-        throw IllegalArgumentException("[ERROR] 로또 구입 비용은 정수여야 합니다.")
+        throw NumberFormatException("[ERROR] 로또 구입 비용은 정수여야 합니다.")
     }
 }
