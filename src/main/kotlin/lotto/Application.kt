@@ -45,16 +45,14 @@ fun main() {
     val lottoNumbers = publicateLottoNumbers(costInput)
 
     // 당첨 번호 입력
-    var winningNumberFlag = false
     var winningNumbers : Lotto? = null
-    while (!winningNumberFlag) {
+    while (winningNumbers == null) {
         try {
             val tempWinningNumbers = inputWinningNumber()
             val tempIntegerValidation = winningNumbersIntegerValidation(tempWinningNumbers)
             val tempRangeValidation = winningNumbersRangeValidation(tempIntegerValidation)
             val tempDuplicateValidation = winningNumbersDuplicateValidation(tempRangeValidation)
             winningNumbers = Lotto(tempDuplicateValidation)
-            winningNumberFlag = true
         } catch (e: Exception) {
             println(e.message)
         }
