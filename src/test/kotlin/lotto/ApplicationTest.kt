@@ -4,6 +4,7 @@ import camp.nextstep.edu.missionutils.test.Assertions.assertRandomUniqueNumbersI
 import camp.nextstep.edu.missionutils.test.Assertions.assertSimpleTest
 import camp.nextstep.edu.missionutils.test.NsTest
 import org.assertj.core.api.Assertions.assertThat
+import org.junit.jupiter.api.assertThrows
 import org.junit.jupiter.api.Test
 
 class ApplicationTest : NsTest() {
@@ -42,10 +43,99 @@ class ApplicationTest : NsTest() {
     }
 
     @Test
-    fun `예외 테스트`() {
+    fun `구매 비용 예외 테스트(숫자)`() {
         assertSimpleTest {
-            runException("1000j")
-            assertThat(output()).contains(ERROR_MESSAGE)
+            val invalidInput = "1000j"
+
+            val expention = assertThrows<IllegalArgumentException> {
+                costInputValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `구매 비용 1000원 단위 예외 테스트`(){
+        assertSimpleTest {
+            val invalidInput = "100"
+
+            val expention = assertThrows<IllegalArgumentException> {
+                costInputValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `당첨 번호 정수 예외 테스트`(){
+        assertSimpleTest {
+            val invalidInput = mutableListOf("1,2,3,4,5,a")
+
+            val expention = assertThrows<IllegalArgumentException> {
+                winningNumbersIntegerValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `당첨 번호 중복 테스트`(){
+        assertSimpleTest {
+            val invalidInput = mutableListOf(1,2,3,4,5,5)
+
+            val expention = assertThrows<IllegalArgumentException> {
+                winningNumbersDuplicateValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `당첨 번호 범위 테스트`(){
+        assertSimpleTest {
+            val invalidInput = mutableListOf(1,85,3,4,5,6)
+
+            val expention = assertThrows<IllegalArgumentException> {
+                winningNumbersRangeValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `보너스 번호 정수 예외 테스트`(){
+        assertSimpleTest {
+            val invalidInput = "a"
+
+            val expention = assertThrows<IllegalArgumentException> {
+                bonusNumberIntegerValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `보너스 번호 중복 테스트`(){
+        assertSimpleTest {
+            val invalidInput = 1
+            val lottoNumbers = mutableListOf(1,2,3,4,5,6)
+
+            val expention = assertThrows<IllegalArgumentException> {
+                bonusNumberDuplicateValidation(lottoNumbers, invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `보너스 번호 범위 테스트`(){
+        assertSimpleTest {
+            val invalidInput = 99
+
+            val expention = assertThrows<IllegalArgumentException> {
+                bonusNumberRangeValidation(invalidInput)
+            }
+            assertThat(expention.message).contains(ERROR_MESSAGE)
         }
     }
 
