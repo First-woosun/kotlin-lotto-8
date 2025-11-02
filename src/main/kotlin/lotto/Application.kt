@@ -10,8 +10,8 @@ enum class finalWinning(
     WINNING_THREE(3, 5000, "3개 일치 (5,000원)"),
     WINNING_FOUR(4, 50000, "4개 일치 (50,000원)"),
     WINNING_FIVE(5, 1500000, "5개 일치 (1,500,000원)"),
-    WINNING_FIVE_WITH_BONUS(5, 3000000, "5개 일치, 보너스 볼 일치 (30,000,000)"),
-    WINNING_SIX(6, 2000000000, "6개 일치 (2,000,000,000)");
+    WINNING_FIVE_WITH_BONUS(5, 3000000, "5개 일치, 보너스 볼 일치 (30,000,000원)"),
+    WINNING_SIX(6, 2000000000, "6개 일치 (2,000,000,000원)");
     
     fun getResultComment(count: Int): String = "${this.comment} - ${count}개"
 }
@@ -30,7 +30,9 @@ fun main() {
         try {
             val tempInput = costInputAndSave()
             costInput = costInputValidation(tempInput)
-        } catch (e: Exception) {
+        } catch (e: NumberFormatException) {
+            println(e.message)
+        } catch (e: IllegalArgumentException) {
             println(e.message)
         }
     }
