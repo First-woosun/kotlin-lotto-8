@@ -183,7 +183,7 @@ class Lotto(private val numbers: List<Int>) {
 
 ## 🚀기능 구현 목록🚀
 
-- [ ]  enum class
+- [x]  enum class
 
     | 이름 | 용도                  |
     | --- |---------------------|
@@ -192,46 +192,46 @@ class Lotto(private val numbers: List<Int>) {
     | WINNING_FIVE | 당첨 숫자가 5개인 경우       |
      | WINNING_FIVE_WITH_BONUS| 당첨 숫자가 5개이며 보너스 숫자도 맞은 경우 |
       | WINNING_SIX | 당첨 숫자가 6개인 경우       |
-- [ ]  costInputAndSave.kt
+- [x]  costInputAndSave.kt
     - 로또 구입 비용을 입력받고 저장하는 함수
-- [ ]  costInputValidation.kt
+- [x]  costInputValidation.kt
     - 입력된 구매 비용이 올바른 형태인지 검증하는 함수
     - 구매 비용은 정수여야 함
     - 구매비용은 1000원 단위로 입력되어야 함
     - 잘못된 형태 입력 시 IllegalArgumentException 출력
     - 1000원 단위로 입력되지 않을 시 IllegalArgumentException 출력
-- [ ]  publicateLottoNumbers.kt
+- [x]  publicateLottoNumbers.kt
     - 입력된 구입 비용에 해당하는 개수 만큼 로또 번호를 무작위로 생성하는 함수
     - 2차원 배열의 형태로 저장
-- [ ]  inputWinningNumber.kt
+- [x]  inputWinningNumber.kt
     - 로또 당첨 번호 6개를 입력 받아 Lotto 클래스에 저장하는 함수
     - 입력된 문자열을 쉼표(,)를 기준으로 분할
-- [ ]  winningNumbersRangeValidation.kt
+- [x]  winningNumbersRangeValidation.kt
     - 입력된 당첨 번호를 검증하는 함수
     - 1~45 범위 외의 숫자 입력 시 OutOfRangeArgumentException 발생
     - OutOfRangeArgumentException Custom Exception 추가
-- [ ]  winningNumbersIntegerValidation.kt
+- [x]  winningNumbersIntegerValidation.kt
     - 숫자가 아닌 값이 있는지 검사하는 함수
     - 숫자가 아닌 값 입력 시 IllegalArgumentException 발생
-- [ ]  winningNumbersDuplicateValidation.kt
+- [x]  winningNumbersDuplicateValidation.kt
     - 중복된 값이 있는지 검증하는 함수
     - 중복된 값이 있다면 IllegalArgumentException 발생
-- [ ]  Lotto.kt
+- [x]  Lotto.kt
     - 로또 번호를 저장하는 클래스
     - 로또 번호와 당첨 번호를 비교하는 compare 메소드 제작 
-- [ ]  inputBonusNumber.kt
+- [x]  inputBonusNumber.kt
     - 보너스 번호를 입력받아 저장하는 함수
-- [ ]  bonusNumbersRangeValidation.kt
+- [x]  bonusNumbersRangeValidation.kt
     - 입력된 보너스 번호를 검증하는 함수
     - 1~45 범위 외의 숫자 입력 시 OutOfRangeArgumentException 발생
     - OutOfRangeArgumentException Custom Exception 추가
-- [ ]  bonusNumbersIntegerValidation.kt
+- [x]  bonusNumbersIntegerValidation.kt
     - 숫자가 아닌 값이 있는지 검사하는 함수
     - 숫자가 아닌 값 입력 시 IllegalArgumentException 발생
-- [ ]  bonusNumbersDuplicateValidation.kt
+- [x]  bonusNumbersDuplicateValidation.kt
     - 중복된 값이 있는지 검증하는 함수
     - 중복된 값이 있다면 IllegalArgumentException 발생
-- [ ]  getLottoResult.kt
+- [x]  getLottoResult.kt
     -  당첨 통계를 반환하는 함수
-- [ ]  getRateOfReturn.kt
+- [x]  getRateOfReturn.kt
     - 최종 수익률을 반환하는 함수 
