@@ -217,8 +217,8 @@ class Lotto(private val numbers: List<Int>) {
     - 중복된 값이 있는지 검증하는 함수
     - 중복된 값이 있다면 IllegalArgumentException 발생
 - [ ]  Lotto.kt
-    - 로또 당첨 번호를 저장하는 클래스
-    - 저장된 당첨 번호 필드 접근을 위한 Getter 메소드 제작
+    - 로또 번호를 저장하는 클래스
+    - 로또 번호와 당첨 번호를 비교하는 compare 메소드 제작 
 - [ ]  inputBonusNumber.kt
     - 보너스 번호를 입력받아 저장하는 함수
 - [ ]  bonusNumbersRangeValidation.kt
@@ -231,8 +231,7 @@ class Lotto(private val numbers: List<Int>) {
 - [ ]  bonusNumbersDuplicateValidation.kt
     - 중복된 값이 있는지 검증하는 함수
     - 중복된 값이 있다면 IllegalArgumentException 발생
-- [ ]  compareNumbers.kt
-    - 당첨 번호와 로또 번호를 비교하는 함수
-    - 당첨된 번호의 개수에 따라 전역 변수 업데이트
+- [ ]  getLottoResult.kt
+    -  당첨 통계를 반환하는 함수
 - [ ]  getRateOfReturn.kt
     - 최종 수익률을 반환하는 함수 
