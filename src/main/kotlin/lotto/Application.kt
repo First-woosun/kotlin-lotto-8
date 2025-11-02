@@ -34,6 +34,10 @@ fun main() {
             println(e.message)
         }
     }
+    if (costInput == 0) {
+        print("게임을 종료합니다.")
+        return
+    }
 
     // 로또 번호 발행
     val lottoNumbers = publicateLottoNumbers(costInput)
