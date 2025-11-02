@@ -55,7 +55,7 @@ class ApplicationTest : NsTest() {
     }
 
     @Test
-    fun `구매 비용 1000원 단위 예외 테스트`(){
+    fun `구매 비용 예외 테스트(1000원 단위)`(){
         assertSimpleTest {
             val invalidInput = "100"
 
@@ -63,6 +63,15 @@ class ApplicationTest : NsTest() {
                 costInputValidation(invalidInput)
             }
             assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `구매 비용 공백 예외 테스트`(){
+        assertSimpleTest {
+            run("", "1000", "1,2,3,4,5,6", "7")
+
+            assertThat(output()).contains(ERROR_MESSAGE)
         }
     }
 
@@ -103,6 +112,15 @@ class ApplicationTest : NsTest() {
     }
 
     @Test
+    fun `당첨 번호 공백 예외 테스트`(){
+        assertSimpleTest {
+            run("1000", "", "1,2,3,4,5,6", "7")
+
+            assertThat(output()).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
     fun `보너스 번호 정수 예외 테스트`(){
         assertSimpleTest {
             val invalidInput = "a"
@@ -136,6 +154,15 @@ class ApplicationTest : NsTest() {
                 bonusNumberRangeValidation(invalidInput)
             }
             assertThat(expention.message).contains(ERROR_MESSAGE)
+        }
+    }
+
+    @Test
+    fun `보너스 번호 공백 예외 테스트`(){
+        assertSimpleTest {
+            run("1000", "1,2,3,4,5,6", "", "7")
+
+            assertThat(output()).contains(ERROR_MESSAGE)
         }
     }
 
